@@ -1,8 +1,13 @@
 {
   "name": "zero-degree",
-  "version": "2.1.3",
+  "version": "2.2.1",
   "description": "Watches and contstanly returns the direction angle between the device and the target location as the phone rotates or moves. This is a React Native package using Expo.",
   "main": "index.js",
+  "license": "MIT",
+  "author": "TareqNewazShahriar",
+  "dependencies": {
+    "expo-location": "^12.0.4"
+  },
   "keywords": [
     "direction",
     "heading",
@@ -26,10 +31,5 @@
     "destination",
     "target",
     "place"
-  ],
-  "dependencies": {
-    "expo-location": "^12.0.4"
-  },
-  "license": "MIT",
-  "author": "TareqNewazShahriar"
+  ]
 }
