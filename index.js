@@ -144,7 +144,7 @@ function ZeroDegree(targetLatLon) {
    }
 
    /* -----------public methods------------- */
-   this.watch = async function (onDegreeUpdate, onError) {
+   this.watchAsync = async function (onDegreeUpdate, onError) {
       _onDegreeUpdate = onDegreeUpdate;
       _onError = onError;
 

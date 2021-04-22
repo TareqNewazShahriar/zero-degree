@@ -10,6 +10,16 @@ A Javascript module that constantly monitors and returns the direction angle of 
 - It returns the degree value accurately even the phone is on hand and tilted, i.e. not perfectly horizontal.
 
 ### How to use
+```js
+let _Mecca = { latitude: 21.42287137530198, longitude: 39.82573402862004 };
+
+let zeroDegree = new ZeroDegree(_Mecca);
+zeroDegree.watch(degree => console.log(degree),
+   err => console.error(err));
+```
+
+This is basic usage. In real projects, it should be used with `useEffect/useState`.
+
 
 See a real world example, here's a precise demo:
 https://snack.expo.io/@tareqshahriar/zero_degree
