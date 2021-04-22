@@ -21,10 +21,10 @@ zeroDegree.watch(degree => console.log(degree),
 This is basic usage. In real projects, it should be used with `useEffect/useState`.
 
 
-See a real world example, here's a precise demo:
+See a real world example, here's a demo:
 https://snack.expo.io/@tareqshahriar/zero_degree
 
-You can check it on a real device. Install **Expo Go** app (iOS, Android) and open the link on with the app.
+You can check it on a real device. Install **Expo Go** app (<a href="https://apps.apple.com/us/app/expo-go/id982107779">iOS app</a> / <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US">Android app</a>) and open the demo link with the app.
 
 ### Events, Props etc
 *Constructor parameter*: An Json object containing latitude, longitude of the target location.
