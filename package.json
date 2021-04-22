@@ -1,6 +1,6 @@
 {
   "name": "zero-degree",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Watches and contstanly returns the direction angle between the device and the target location as the phone rotates or moves. This is a React Native package using Expo.",
   "main": "index.js",
   "license": "MIT",
