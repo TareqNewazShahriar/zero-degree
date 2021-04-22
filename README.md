@@ -10,7 +10,7 @@ An NPM package to constantly monitors and returns the direction angle of the dev
 
 ### Usage
 Here's a precise demo
-https://snack.expo.io/@tareqshahriar/zerodegree
+https://snack.expo.io/@tareqshahriar/zero_degree
 
 You can also check it on a real device. Downlaod **Expo Go** app (iOS + Android) and open the link of the demo on the app.
 
