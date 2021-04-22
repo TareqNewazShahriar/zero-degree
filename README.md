@@ -14,8 +14,7 @@ A module that constantly monitors and returns the direction angle of the target 
 let _Mecca = { latitude: 21.42287137530198, longitude: 39.82573402862004 };
 
 let zeroDegree = new ZeroDegree(_Mecca);
-zeroDegree.watch(degree => console.log(degree),
-   err => console.error(err));
+zeroDegree.watchAsync(degree => console.log(degree));
 ```
 
 This is basic usage. In real projects, it should be used with `useEffect/useState`.
