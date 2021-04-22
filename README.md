@@ -11,6 +11,9 @@ A module that constantly monitors and returns the direction angle of the target 
 
 ### How to use
 ```js
+import ZeroDegree from 'zero-degree';
+
+
 let _Mecca = { latitude: 21.42287137530198, longitude: 39.82573402862004 };
 
 let zeroDegree = new ZeroDegree(_Mecca);
