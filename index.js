@@ -9,6 +9,7 @@ function ZeroDegree(targetLatLon, _additionalInfoCallback) {
    let _onError;
    let _unwatchHeading;
    let _unwatchPosition;
+   let _lastCollectedDegree = 0;
 
    /* -----------private methods------------- */
    function calculateAngleOfPhoneAndTarget(phoneAngle, angleWithUserAndTarget, tag) {
@@ -61,12 +62,12 @@ function ZeroDegree(targetLatLon, _additionalInfoCallback) {
       try {
         _unwatchPosition = await Location.watchPositionAsync({
               accuracy: Location.Accuracy.Balanced,
-              timeInterval: 2000,
+              timeInterval: -1,
               distanceInterval: 5 /* meters */
           },
           location => {
               _angleOfUserAndTarget = calculateAngleWithUserAndTarget(location.coords, _TARGET_LAT_LON);
-              _angleOfPhoneAndTarget = calculateAngleOfPhoneAndTarget(_angleOfPhoneAndTarget, _angleOfUserAndTarget);
+              _angleOfPhoneAndTarget = calculateAngleOfPhoneAndTarget(_lastCollectedDegree, _angleOfUserAndTarget);
               _updateDegree(_angleOfPhoneAndTarget);
               
               _additionalInfoCallback(new Date().toLocaleTimeString() + ' Got new position. Angle between user and target ' + _angleOfUserAndTarget);
@@ -84,6 +85,7 @@ function ZeroDegree(targetLatLon, _additionalInfoCallback) {
    async function initWatchHeading() {
      try {
       _unwatchHeading = await Location.watchHeadingAsync(obj => {
+          _lastCollectedDegree = obj.magHeading;
           _angleOfPhoneAndTarget = calculateAngleOfPhoneAndTarget(obj.magHeading, _angleOfUserAndTarget);
           _updateDegree(_angleOfPhoneAndTarget);
         });
