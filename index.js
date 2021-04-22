@@ -153,7 +153,7 @@ function ZeroDegree(targetLatLon) {
       }
 
       if (__getLogData)
-         passLogData('Waiting for GPS data...');
+         passLogData('Waiting for GPS data.');
 
       await initGps();
       await initWatchHeading();

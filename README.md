@@ -1,7 +1,7 @@
 ## Zero Degree
 (React Native/Expo package)
 
-A Javascript module that constantly monitors and returns the direction angle of the target location as the phone rotates or moves. This is a React Native/Expo package.
+A module that constantly monitors and returns the direction angle of the target location as the phone rotates or moves. This is a React Native/Expo package.
 
 ### What it does
 - Monitors device location (GPS) and device heading (using magnetometer sensor).
