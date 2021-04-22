@@ -55,25 +55,25 @@ zeroDegree._getLogData = info => console.log(info);
 
 ### A Complete Example
 ```js
-// a
+// App.js
 import React, { useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
 import ZeroDegree from 'zero-degree';
+
+let _Mecca = { latitude: 21.42287137530198, longitude: 39.82573402862004 };
 
 export default function App() {
    const [err, setError] = useState(null);
    const [degree, setDegree] = useState(null);
    const [log, setLog] = useState(null);
-   
-   let _Mecca = { latitude: 21.42287137530198, longitude: 39.82573402862004 };
 
   useEffect(() => {
     let zeroDegree;
     async function initZeroDegree() {
       zeroDegree = new ZeroDegree(_Mecca);  
-      zeroDegree._getLogData = log => { alert(); setLog(log) };
+      zeroDegree._getLogData = log => setLog(log);
 
-      await zeroDegree.watch(degree => setDegree(Math.round(degree)),
+      await zeroDegree.watchAsync(degree => setDegree(Math.round(degree)),
         err => setError(err));
     }
 
@@ -85,7 +85,7 @@ export default function App() {
   return (
     <View>
       <Text>Target: {degree}&deg;</Text>
-      <Text>err: {JSON.stringify(err)}</Text>
+      <Text>Error: {JSON.stringify(err)}</Text>
       <Text>Info: {JSON.stringify(log)}</Text>
     </View>
   );

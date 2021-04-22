@@ -139,7 +139,7 @@ function ZeroDegree(targetLatLon) {
          message: msg,
          angleOfUserAndTarget: (_angleOfUserAndTarget || 0).toFixed(1),
          angleOfPhoneAndTarget: (_angleOfPhoneAndTarget || 0).toFixed(1),
-         degree: (_lastDegree || 0).toFixed(1),
+         deviceHeadingWrtNorth: (_lastDegree || 0).toFixed(1),
       });
    }
 
