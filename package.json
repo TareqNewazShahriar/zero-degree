@@ -1,35 +1,43 @@
 {
-  "name": "zero-degree",
-  "version": "3.0.1",
-  "description": "An NPM package to constantly monitors and returns the direction angle of the device and the target place as the phone rotates or moves. This is a React Native package using Expo.",
-  "main": "index.js",
-  "license": "MIT",
-  "author": "TareqNewazShahriar",
-  "dependencies": {
-    "expo-location": "^12.0.4"
-  },
-  "keywords": [
-    "direction",
-    "heading",
-    "magnetometer",
-    "gps",
-    "location",
-    "angle",
-    "degree",
-    "react-native",
-    "expo",
-    "compass",
-    "device",
-    "phone",
-    "geometry",
-    "kaba",
-    "qibla",
-    "earth",
-    "latitude",
-    "longitude",
-    "coordinate",
-    "destination",
-    "target",
-    "place"
-  ]
+   "name": "zero-degree",
+   "version": "3.0.1",
+   "description": "An NPM package to constantly monitors and returns the direction angle of the device and the target place as the phone rotates or moves. This is a React Native package using Expo.",
+   "main": "index.js",
+   "license": "MIT",
+   "author": "TareqNewazShahriar",
+   "dependencies": {
+      "expo-location": "^12.0.4"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/TareqNewazShahriar/zero-degree.git"
+   },
+   "homepage": "https://github.com/TareqNewazShahriar/zero-degree#readme",
+   "bugs": {
+      "url": "https://github.com/TareqNewazShahriar/zero-degree/issues"
+   },
+   "keywords": [
+      "direction",
+      "heading",
+      "magnetometer",
+      "gps",
+      "location",
+      "angle",
+      "degree",
+      "react-native",
+      "expo",
+      "compass",
+      "device",
+      "phone",
+      "geometry",
+      "kaba",
+      "qibla",
+      "earth",
+      "latitude",
+      "longitude",
+      "coordinate",
+      "destination",
+      "target",
+      "place"
+   ]
 }
