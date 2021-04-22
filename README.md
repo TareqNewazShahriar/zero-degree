@@ -30,19 +30,19 @@ You can check it on a real device. Install **Expo Go** app (<a href="https://app
 *Constructor parameter*: An Json object containing latitude, longitude of the target location.
 ```js
 const _Mecca = { latitude: 21.422507552770295, longitude: 39.826191913255556 };
-let zeroDegree = new ZeroDegree(_Mecca);
+let zeroDegreeObj = new ZeroDegree(_Mecca);
 ```
 
 *zeroDegreeObj.watch(onDegreeUpdate, onError)*: Instance method, to start watching the device location and device heading.
 - *onDegreeUpdate callback*: Constantly receives the degree value of the phone heading with respect to target as the phone moves. It receives the degree as an integer.
 ```js
-await zeroDegree.watch(degree => console.log(degree));
+await zeroDegreeObj.watchAsync(degree => console.log(degree));
 ```
 
 - *onError callback*: It will be called whenever a error will be occurred, with an object as argument having error details.
 
 ```js
-zeroDegree.watch(
+zeroDegreeObj.watchAsync(
    degree => console.log(degree), 
    errData => console.error(errData);
 );
@@ -50,7 +50,7 @@ zeroDegree.watch(
 
 *zeroDegreeObj._getLogData*: For debugging purpose. Assign a function to it to receive additional data in an object.
 ```js
-zeroDegree._getLogData = info => console.log(info);
+zeroDegreeObj._getLogData = log => console.log(log);
 ```
 
 ### A Complete Example
@@ -71,7 +71,7 @@ export default function App() {
     let zeroDegree;
     async function initZeroDegree() {
       zeroDegree = new ZeroDegree(_Mecca);  
-      zeroDegree._getLogData = log => setLog(log);
+      zeroDegree._getLogData = log => setLog(log); // optional
 
       await zeroDegree.watchAsync(degree => setDegree(Math.round(degree)),
         err => setError(err));
