@@ -29,15 +29,16 @@ function ZeroDegree(targetLatLon) {
 
    /* -----------private methods------------- */
    function calculateAngleOfPhoneAndTarget(phoneAngle, angleWithUserAndTarget, tag) {
-      let angle = phoneAngle < 90 ? phoneAngle + 270 : phoneAngle - 90; // convert north angle to east angle
-
+      // convert north angle to east angle
+      let angle = phoneAngle <= 90 ? 90 - phoneAngle : -(phoneAngle - 450);
+      
       angle = angleWithUserAndTarget - angle; // phone angle wrt target
 
       // Make the degree equatlly divided to 0 to 180 and -1 to -180 wrt target
       if (angle > 180) angle = angle - 360;
       else if (angle < -180) angle = angle + 360;
 
-      return -angle;
+      return angle;
    }
 
    function calculateAngleWithUserAndTarget(myCoordinate, targetCoordinate) {
