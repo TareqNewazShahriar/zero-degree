@@ -20,19 +20,18 @@ let zeroDegree = new ZeroDegree(_Mecca);
 zeroDegree.watchAsync(degree => console.log(degree));
 ```
 
-This is basic usage. In real projects, it should be used with `useEffect/useState`.
+This is a basic usage; in real project, use with `useEffect/useState`.
 
+Check out a demo: https://snack.expo.io/@tareqshahriar/zero_degree
 
-See a real world example, here's a demo:
-https://snack.expo.io/@tareqshahriar/zero_degree
-
-You can check it on a real device. Install **Expo Go** app (<a href="https://apps.apple.com/us/app/expo-go/id982107779">iOS app</a> / <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US">Android app</a>) and open the demo link with the app.
+You can run the demo on a real device. Install **Expo Go** app (<a href="https://apps.apple.com/us/app/expo-go/id982107779">iOS app</a> / <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US">Android app</a>); on mobile browser, tap the demo link, it will be prompted to open the demo using *Expo Go*.
 
 ### Events, Props etc
 *Constructor parameter*: An Json object containing latitude, longitude of the target location.
 ```js
-const _Mecca = { latitude: 21.422507552770295, longitude: 39.826191913255556 };
-let zeroDegreeObj = new ZeroDegree(_Mecca);
+
+const _Greenland = { latitude: 76.94606201163724, longitude: -43.474120688453034 };
+let zeroDegreeObj = new ZeroDegree(_Greenland);
 ```
 
 *zeroDegreeObj.watch(onDegreeUpdate, onError)*: Instance method, to start watching the device location and device heading.
