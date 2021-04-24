@@ -9,7 +9,7 @@ function ZeroDegree(targetLatLon) {
    let _angleOfPhoneAndTarget
    let _lastDegree = 0;
 
-   /* Handlers/callbacks */
+   /* -----------Handlers/subscribers----------- */
    let _onDegreeUpdate;
    let _onError;
    let __getLogData;
@@ -29,10 +29,12 @@ function ZeroDegree(targetLatLon) {
 
    /* -----------private methods------------- */
    function calculateAngleOfPhoneAndTarget(phoneAngle, angleWithUserAndTarget, tag) {
-      // convert north angle to east angle
+      // Convert the degree from north based degree to east based degree and
+      // clockwise to anti clockwise.
       let angle = phoneAngle <= 90 ? 90 - phoneAngle : -(phoneAngle - 450);
-      
-      angle = angleWithUserAndTarget - angle; // phone angle wrt target
+
+      // Phone angle wrt target
+      angle = angleWithUserAndTarget - angle;
 
       // Make the degree equatlly divided to 0 to 180 and -1 to -180 wrt target
       if (angle > 180) angle = angle - 360;
