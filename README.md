@@ -7,13 +7,10 @@ A module that constantly monitors and returns the direction angle of the target 
 *(For Github users: NPM package link - https://www.npmjs.com/package/zero-degree)*
 
 ### What It Does
-[-] Monitors device location (GPS) and device heading (using magnetometer sensor).
-
-[-] Constantly returns angle (in degree) between the device and the target.
-
-[-] The value returns from the module is from -179 to 180 degree; 0 degree means the device is pointed to the target perfectly.
-
-[-] It returns the degree value accurately even the phone is on hand and tilted, i.e. not perfectly horizontal.
+`*` Monitors device location (GPS) and device heading (using magnetometer sensor).  
+`*` Constantly returns angle (in degree) between the device and the target.  
+`*` The value returns from the module is from -179 to 180 degree; 0 degree means the device is pointed to the target perfectly.  
+`*` It returns the degree value accurately even the phone is on hand and tilted, i.e. not perfectly horizontal.
 
 ### How To Use
 ```js
@@ -29,7 +26,7 @@ Use with `useEffect/useState` in projects. See the **Complete Example** below th
 You can run the demo on a real device. Install **Expo Go** app (<a href="https://apps.apple.com/us/app/expo-go/id982107779">iOS app</a> / <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US">Android app</a>); on mobile browser, tap the demo link, it will be prompted to open the demo using *Expo Go*.
 
 ### Events, Props etc
-**Constructor parameter**: An Json object containing latitude, longitude of the target location.
+**Constructor parameter**: Pass an Json object containing latitude, longitude of the target location.
 ```js
 const _Greenland = { latitude: 76.94606201163724, longitude: -43.474120688453034 };
 let zeroDegreeObj = new ZeroDegree(_Greenland);
@@ -37,7 +34,7 @@ let zeroDegreeObj = new ZeroDegree(_Greenland);
 
 **zeroDegreeObj.watch(onDegreeUpdate, onError)**: Instance method, to start watching the device location and device heading.
 
-*onDegreeUpdate callback*: Constantly receives the degree value of the phone heading with respect to target as the phone moves. It receives the degree as an integer.
+*onDegreeUpdate callback*: Constantly receives the degree value of the phone heading with respect to target as the phone moves.
 ```js
 await zeroDegreeObj.watchAsync(degree => console.log(degree));
 ```
@@ -88,16 +85,15 @@ export default function App() {
   return (
     <View>
       <Text>Target: {degree}&deg;</Text>
-      <Text>Error: {JSON.stringify(err)}</Text>
       <Text>Info: {JSON.stringify(log)}</Text>
+      <Text>Error: {JSON.stringify(err)}</Text>
     </View>
   );
 }
 ```
 
 ### Accuracy Tests
-Device: IPhone 7
-
+Device: IPhone 7  
 Location: Dhaka, Bangladesh
 
 | Targets | Result |

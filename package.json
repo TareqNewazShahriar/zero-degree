@@ -1,6 +1,6 @@
 {
    "name": "zero-degree",
-   "version": "3.1.5",
+   "version": "3.1.6",
    "description": "A module that constantly monitors and returns the direction angle of the target location as the phone rotates or moves. This is a React Native/Expo package.",
    "main": "index.js",
    "license": "MIT",
