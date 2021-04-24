@@ -1,7 +1,10 @@
 ## Zero Degree
 (React Native/Expo package)
 
-A module that constantly monitors and returns the direction angle of the target location as the phone rotates or moves. This is a React Native/Expo package.
+A Javascript module that constantly monitors and returns the direction angle of the target location as the phone rotates or moves. This is a React Native/Expo package.
+
+
+- *(Note for Github users: NPM package link - https://www.npmjs.com/package/zero-degree)*
 
 ### What it does
 - Monitors device location (GPS) and device heading (using magnetometer sensor).
@@ -13,14 +16,12 @@ A module that constantly monitors and returns the direction angle of the target 
 ```js
 import ZeroDegree from 'zero-degree';
 
-
 let _Mecca = { latitude: 21.42287137530198, longitude: 39.82573402862004 };
-
 let zeroDegree = new ZeroDegree(_Mecca);
 zeroDegree.watchAsync(degree => console.log(degree));
 ```
 
-This is a basic usage; in real project, use with `useEffect/useState`.
+This In project, use with `useEffect/useState`.
 
 Check out a demo: https://snack.expo.io/@tareqshahriar/zero_degree
 
@@ -29,7 +30,6 @@ You can run the demo on a real device. Install **Expo Go** app (<a href="https:/
 ### Events, Props etc
 *Constructor parameter*: An Json object containing latitude, longitude of the target location.
 ```js
-
 const _Greenland = { latitude: 76.94606201163724, longitude: -43.474120688453034 };
 let zeroDegreeObj = new ZeroDegree(_Greenland);
 ```
@@ -40,7 +40,7 @@ let zeroDegreeObj = new ZeroDegree(_Greenland);
 await zeroDegreeObj.watchAsync(degree => console.log(degree));
 ```
 
-- *onError callback*: It will be called whenever a error will be occurred, with an object as argument having error details.
+*onError callback*: It will be called whenever a error will be occurred, with an object as argument having error details.
 
 ```js
 zeroDegreeObj.watchAsync(
@@ -92,3 +92,35 @@ export default function App() {
   );
 }
 ```
+
+### Accuracy Test and Results
+Device: IPhone 7
+Location: Dhaka, Bangladesh
+
+| Targets | Result |
+| --------|--------|
+| Mecca, Saudi Arabia | OK |
+| Greenland (north pole) | OK |
+| Somewhere in exact north (Yeniseysky, Russia)  | OK |
+| Exact south (Indian Ocean) | OK |
+| Exact west (Algeria) | OK |
+| Exact east (North Pacific Ocean) | OK |
+| New Zealand | OK |
+| Antarctica (south pole) | OK |
+| Nunavut, Canada | OK |
+
+To perform a reverse test, different locations were passed to the module as the device's current location, ignoring the GPS data.
+
+Target: Mecca, Saudi Arabia
+
+| Device Mocked Location            | Result |
+| ----------------                  | ------ |
+| Melbourne, Australia              | OK     |
+| Greenland (north pole)            | OK*    |
+| Somewhere in Indian Ocean (exact south of Mecca) | OK     |
+| Somewhere in Barents Sea (exact north of Mecca | OK     |
+| Timaukel, Magallanes and Chilean Antarctica, Chile | OK     |
+| South China Sea (exact east of Mecca) | OK     |
+| Antarctic Ice shield, Antarctica  | Seems OK*  |
+
+[*] On earth globe, Antarctic Ice shield, Antarctica (-75.36047491435592, -79.42558210228636) is at southern pole which is under the the globe. As a mocked location, it produces good result, but surely on south pole (and on north pole) magnetometer will not work.
