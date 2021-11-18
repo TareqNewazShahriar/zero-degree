@@ -7,7 +7,7 @@ A module that constantly monitors and returns the direction angle of the target 
 *(For Github users: NPM package link - https://www.npmjs.com/package/zero-degree)*
 
 ### What It Does
-`*` Monitors device location (GPS) and device heading (using magnetometer sensor).  
+`*` Monitors device location (GPS) and device heading (using magnetometer).  
 `*` Constantly returns angle (in degree) between the device and the target.  
 `*` The value returns from the module is from -179 to 180 degree; 0 degree means the device is pointed to the target perfectly.  
 `*` It returns the degree value accurately even the phone is on hand and tilted, i.e. not perfectly horizontal.
@@ -23,7 +23,9 @@ zeroDegree.watchAsync(degree => console.log(degree));
 
 Use with `useEffect/useState` in projects. See the **Complete Example** below this *readme* or check out the demo: https://snack.expo.io/@tareqshahriar/zero_degree
 
-You can run the demo on a real device. Install **Expo Go** app (<a href="https://apps.apple.com/us/app/expo-go/id982107779">iOS app</a> / <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US">Android app</a>); on mobile browser, tap the demo link, it will be prompted to open the demo using *Expo Go*.
+You can run the demo on a real device. 
+- Install **Expo Go** app (<a href="https://apps.apple.com/us/app/expo-go/id982107779">iOS app</a> / <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US">Android app</a>); 
+- On mobile browser, tap the demo link, it will be prompted to open the demo using *Expo Go*.
 
 ### Events, Props etc
 **Constructor parameter**: Pass an Json object containing latitude, longitude of the target location.
