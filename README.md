@@ -124,4 +124,4 @@ Target: Mecca, Saudi Arabia
 | Antarctic Ice shield, Antarctica  | Seems OK*  |
 
 
-[*] On earth globe, Antarctic Ice shield (-75.36047491435592, -79.42558210228636) is located at south pole which is under the the globe. As a mocked location, it produces good result, but in real, magnetometer will not work on south pole as well as on north pole.
+[*] On earth globe, Antarctic Ice shield (-75.36047491435592, -79.42558210228636) is located at south pole which is under the the globe. From mathematical stand-point, it produces good result; but in real, magnetometer will not work on south pole as well as on north pole.
