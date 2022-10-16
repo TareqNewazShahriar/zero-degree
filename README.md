@@ -4,7 +4,7 @@
 A module that constantly monitors and returns the direction angle of the target location as the phone rotates or moves. This is a React Native/Expo package.
 
 
-*(For Github users: NPM package link - https://www.npmjs.com/package/zero-degree)*
+*(For Github visitors: NPM package link - https://www.npmjs.com/package/zero-degree)*
 
 ### What It Does
 `*` Monitors device location (GPS) and device heading (using magnetometer).  
